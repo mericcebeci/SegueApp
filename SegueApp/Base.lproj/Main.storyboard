@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,10 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKR-A0-qyX">
-                                <rect key="frame" x="83" y="398" width="224" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.41200761549999998" green="0.80026197980000002" blue="0.65576418069999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKR-A0-qyX">
+                                <rect key="frame" x="83" y="398" width="224" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="ZNh-c4-LbH"/>
+                                </constraints>
+                                <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="rectangle.portrait.and.arrow.right.fill" catalog="system" title="Go To 2 nd Segue">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
@@ -28,25 +31,30 @@
                                     <segue destination="7dF-R1-hyE" kind="show" id="eqb-0F-90T"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 st ViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTE-E9-zIk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1 st ViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTE-E9-zIk">
                                 <rect key="frame" x="54" y="91" width="283" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="h4N-kS-yjZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZF7-pR-wpl">
-                                <rect key="frame" x="83" y="158" width="231" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name :" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZF7-pR-wpl">
+                                <rect key="frame" x="54" y="158" width="283" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2F-EJ-u5x">
-                                <rect key="frame" x="145" y="219" width="101" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" systemColor="systemRedColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2F-EJ-u5x">
+                                <rect key="frame" x="125" y="334" width="140" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Yo6-Qm-WQH"/>
+                                </constraints>
+                                <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="arrowshape.forward.fill" catalog="system" title=" Next"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrowshape.forward.fill" catalog="system" title=" Next">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="nextClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MDJ-Bx-Yc9"/>
                                 </connections>
@@ -54,12 +62,26 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <constraints>
+                            <constraint firstItem="OKR-A0-qyX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="0pY-id-I6i"/>
+                            <constraint firstItem="y2F-EJ-u5x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="5fk-rq-nNc"/>
+                            <constraint firstItem="OKR-A0-qyX" firstAttribute="top" secondItem="y2F-EJ-u5x" secondAttribute="bottom" constant="33" id="GhS-4V-UcC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OKR-A0-qyX" secondAttribute="bottom" constant="379" id="ITM-oE-g8j"/>
+                            <constraint firstItem="FTE-E9-zIk" firstAttribute="leading" secondItem="ZF7-pR-wpl" secondAttribute="leading" id="JEw-5h-5Yg"/>
+                            <constraint firstItem="y2F-EJ-u5x" firstAttribute="centerX" secondItem="OKR-A0-qyX" secondAttribute="centerX" id="VCl-JP-sCK"/>
+                            <constraint firstItem="FTE-E9-zIk" firstAttribute="trailing" secondItem="ZF7-pR-wpl" secondAttribute="trailing" id="W3p-qe-i16"/>
+                            <constraint firstItem="FTE-E9-zIk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hnP-H5-eFk"/>
+                            <constraint firstItem="FTE-E9-zIk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="qee-hm-cVs"/>
+                            <constraint firstItem="ZF7-pR-wpl" firstAttribute="centerX" secondItem="y2F-EJ-u5x" secondAttribute="centerX" id="rfp-Lp-i8A"/>
+                            <constraint firstItem="FTE-E9-zIk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t5n-DG-afb"/>
+                            <constraint firstItem="ZF7-pR-wpl" firstAttribute="top" secondItem="FTE-E9-zIk" secondAttribute="bottom" constant="25" id="tOI-02-Hwd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VaY-0a-4JG"/>
                     <connections>
                         <outlet property="myLabel" destination="FTE-E9-zIk" id="E2c-ND-sSK"/>
                         <outlet property="nameTextField" destination="ZF7-pR-wpl" id="9Xc-cY-btw"/>
+                        <segue destination="7dF-R1-hyE" kind="show" identifier="toSecondVC" id="h0l-d3-gO6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,14 +143,17 @@
             <point key="canvasLocation" x="21.538461538461537" y="3.5545023696682461"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="h0l-d3-gO6"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="arrowshape.forward.fill" catalog="system" width="128" height="104"/>
         <image name="rectangle.portrait.and.arrow.right.fill" catalog="system" width="128" height="108"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

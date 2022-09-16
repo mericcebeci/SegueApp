@@ -8,8 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var nameTextField: UITextField!
     
+    var userName = ""
+    
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var myLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +20,19 @@ class ViewController: UIViewController {
     
     
     @IBAction func nextClicked(_ sender: Any) {
+        
+        userName = nameTextField.text!
+        performSegue(withIdentifier: "toSecondVC", sender: nil)
+        
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSecondVC"{
+            let destinationVc = segue.destination as! SecondViewController
+            destinationVc.myName = userName
+            
+        }
+    }
     
     
 }
